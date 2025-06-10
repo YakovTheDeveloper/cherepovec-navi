@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900; // This range covers all possible weight variations
+  font-style: normal;
+  font-display: swap; // Ensures better loading performance
+}
