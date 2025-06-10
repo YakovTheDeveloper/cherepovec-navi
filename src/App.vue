@@ -2,6 +2,9 @@
 import { RouterLink, RouterView } from 'vue-router'
 
 import IconBrand from './components/icons/IconBrand.vue'
+import WaitingMode from './components/waiting-mode/WaitingMode.vue'
+import { useSleepingModeStore } from './stores/useWaitingModeStore'
+useSleepingModeStore()
 </script>
 
 <template>
@@ -10,6 +13,7 @@ import IconBrand from './components/icons/IconBrand.vue'
   </Flex>
 
   <RouterView />
+  <WaitingMode />
 </template>
 
 <style scoped></style>

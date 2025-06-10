@@ -34,6 +34,8 @@ export interface FlexProps {
   mb?: Size
   ml?: Size
   mr?: Size
+  shrink?: boolean
+  grow?: boolean
 
   // Border & Radius
   brad?: Size
@@ -62,7 +64,8 @@ const styleObject = computed(() => ({
   justifyContent: props.center ? ('center' as const) : props.justify,
   alignItems: props.center ? ('center' as const) : props.align,
   gap: toPx(props.gap),
-
+  flexGrow: props.grow ? 1 : undefined,
+  flexShrink: props.shrink ? 1 : undefined,
   // Spacing
   ...(props.p && { padding: toPx(props.p) }),
   ...(props.m && { margin: toPx(props.m) }),

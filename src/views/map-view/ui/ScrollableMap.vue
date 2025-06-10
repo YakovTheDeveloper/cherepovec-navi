@@ -12,6 +12,8 @@
     @mouseleave="map.onMouseUp"
   >
     <img src="/map.png" draggable="false" class="map-img" width="8080px" height="6450px" />
+    <!-- <MapComponentSvg draggable="false" width="8080px" height="6450px" class="map-img">
+    </MapComponentSvg> -->
     <slot></slot>
   </div>
 </template>
@@ -19,6 +21,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { useMap } from './useMap'
+import MapComponentSvg from '@/components/MapComponentSvg.vue'
 
 const props = defineProps<{
   sizeCoefficient: number
@@ -28,8 +31,8 @@ const props = defineProps<{
 const defaultInitImgSizes: [number, number] = [8080, 6450]
 const initImgSizes = computed(() => props.initImgSizes || defaultInitImgSizes)
 
-const containerWidth = ref(window.innerWidth)
-const containerHeight = ref(window.innerHeight)
+const containerWidth = ref(2000)
+const containerHeight = ref(3340)
 
 const map = useMap({
   containerWidth,

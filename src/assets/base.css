@@ -5,6 +5,7 @@
   --color-black: #000000;
   --color-white: #ffffff;
   --color-red: #ff4433;
+  --padding-container: 80px;
 }
 
 *,
@@ -13,13 +14,14 @@
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
+  touch-action: manipulation;
 }
 
 html {
   width: 2160px;
   height: 3840px;
   overflow: hidden;
-  padding: 80px;
+  padding: var(--padding-container);
 }
 
 body {
@@ -48,4 +50,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  border: none;
 }
