@@ -1,9 +1,16 @@
 <template>
   <Flex :style="{ overflow: 'hidden' }" my="60" h="3340" border="8px solid #fff" brad="60">
     <ScrollableMap :sizeCoefficient="sizeCoefficient" />
-    <Absolute bottom="0">
+    <Absolute
+      :bottom="!keyboard.showKeyboard.value ? '430px' : '1140px'"
+      left="80px"
+      :style="{ width: 'fit-content' }"
+    >
+      <MapScaleControls @decrement="decrement" @increment="increment" />
+    </Absolute>
+    <Absolute bottom="80px">
       <Flex p="60" gap="40" :col="true">
-        <MapScaleControls @decrement="decrement" @increment="increment" />
+        <!-- <MapScaleControls @decrement="decrement" @increment="increment" /> -->
         <Flex gap="20" p="40" bg="#fff" brad="60px" h="238">
           <Flex :grow="true">
             <SearchInput v-model="keyboard.inputModel.value" @focus="keyboard.onFocus" />

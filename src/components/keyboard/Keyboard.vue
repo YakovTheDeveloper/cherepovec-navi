@@ -112,7 +112,7 @@ body .simple-keyboard {
   background-color: rgba(255, 255, 255, 1);
   min-width: 100% !important;
   margin: 0 auto !important;
-  border-radius: 24px;
+  border-radius: 48px;
   padding: 24px;
   position: relative;
   height: 528px;

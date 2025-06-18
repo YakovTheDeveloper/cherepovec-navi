@@ -18,7 +18,7 @@ export interface FlexProps {
   col?: boolean
   wrap?: boolean
   gap?: Size
-
+  overflow?: 'hidden' | 'auto' | ''
   // Spacing
   p?: Size
   m?: Size
@@ -36,7 +36,7 @@ export interface FlexProps {
   mr?: Size
   shrink?: boolean
   grow?: boolean
-
+  position?: 'relative'
   // Border & Radius
   brad?: Size
   border?: boolean
@@ -66,6 +66,8 @@ const styleObject = computed(() => ({
   gap: toPx(props.gap),
   flexGrow: props.grow ? 1 : undefined,
   flexShrink: props.shrink ? 1 : undefined,
+  overflow: props.overflow ? props.overflow : '',
+  position: props.position ? props.position : '',
   // Spacing
   ...(props.p && { padding: toPx(props.p) }),
   ...(props.m && { margin: toPx(props.m) }),
